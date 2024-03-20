@@ -1,0 +1,17 @@
+[tool.poetry]
+name = "zterm"
+version = "0.1.0"
+description = "terminal emulator"
+authors = ["Billy <billydevbusiness@gmail.com>, Harsh Narayan Jha <harshnarayanjha@github.com>"]
+license = "MIT"
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.10"
+pyqt5 = "^5.15.10"
+pyqt5-qt5 = "=5.15.2"
+PyQt-Fluent-Widgets = "^1.5.2"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

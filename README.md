@@ -1,14 +1,12 @@
 # ZTerm
 
-A Simplysh Terminal Emulator in making, written in Qt5 and Python
+Terminal Emulator written in Qt5 and Python.
 
-## Check it Out
-
-Be sure to make a virtualenv (not required) and install requirements!
+## Building
+Use [poetry](https://python-poetry.org/) to install requirements:
 
 ```bash
-git clone https://github.com/z-term/zterm.git
-cd zterm
+poetry install
+poetry shell
 python zterm
 ```
-
