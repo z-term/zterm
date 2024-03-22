@@ -236,6 +236,10 @@ class Terminal(QWidget):
         """
         Cleans up the terminal for next command
         """
+        self.username = getpass.getuser()
+        self.hostname = socket.gethostname()
+        self.cwd = os.getcwd()
+        
         self.prompt = f"{self.username}@{self.hostname}:{self.cwd}$ "
         self.cmd_window.appendPlainText(self.prompt)
         cursor = self.cmd_window.textCursor()

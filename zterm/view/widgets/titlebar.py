@@ -31,8 +31,8 @@ class ZTermTitleBar(MSFluentTitleBar):
         # self.tabBar.setScrollable(True)
         self.tabBar.setCloseButtonDisplayMode(TabCloseButtonDisplayMode.ON_HOVER)
 
-        self.tabBar.tabCloseRequested.connect(self.tabBar.removeTab)
-        self.tabBar.currentChanged.connect(lambda i: print(self.tabBar.tabText(i)))
+        # self.tabBar.tabCloseRequested.connect(self.tabBar.removeTab)
+        # self.tabBar.currentChanged.connect(lambda i: print(self.tabBar.tabText(i)))
 
         self.hBoxLayout.insertWidget(5, self.tabBar, 1)
         self.hBoxLayout.setStretch(6, 0)
