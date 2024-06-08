@@ -1,12 +1,11 @@
-from PyQt5.QtCore import Qt, QUrl, QSize, QPoint
-from PyQt5.QtGui import QIcon, QDesktopServices
-from PyQt5.QtWidgets import QApplication, QFrame, QHBoxLayout, QVBoxLayout, QWidget
-
-from qfluentwidgets import *
+from PyQt5.QtCore import QPoint
+from PyQt5.QtWidgets import QHBoxLayout
 from qfluentwidgets import FluentIcon as FIF
+from qfluentwidgets import *
+
 
 class ZTermTitleBar(MSFluentTitleBar):
-    """ Title bar with icon and title """
+    """Title bar with icon and title"""
 
     def __init__(self, parent):
         super().__init__(parent)
@@ -14,7 +13,9 @@ class ZTermTitleBar(MSFluentTitleBar):
         # add buttons
         self.toolButtonLayout = QHBoxLayout()
         color = QColor(206, 206, 206) if isDarkTheme() else QColor(96, 96, 96)
-        self.searchButton = TransparentToolButton(FIF.SEARCH_MIRROR.icon(color=color), self)
+        self.searchButton = TransparentToolButton(
+            FIF.SEARCH_MIRROR.icon(color=color), self
+        )
 
         self.toolButtonLayout.setContentsMargins(20, 0, 20, 0)
         self.toolButtonLayout.setSpacing(15)
@@ -27,7 +28,9 @@ class ZTermTitleBar(MSFluentTitleBar):
         self.tabBar.setMovable(True)
         self.tabBar.setTabMaximumWidth(220)
         self.tabBar.setTabShadowEnabled(False)
-        self.tabBar.setTabSelectedBackgroundColor(QColor(255, 255, 255, 125), QColor(255, 255, 255, 50))
+        self.tabBar.setTabSelectedBackgroundColor(
+            QColor(255, 255, 255, 125), QColor(255, 255, 255, 50)
+        )
         # self.tabBar.setScrollable(True)
         self.tabBar.setCloseButtonDisplayMode(TabCloseButtonDisplayMode.ON_HOVER)
 

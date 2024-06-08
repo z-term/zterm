@@ -1,8 +1,11 @@
 [tool.poetry]
 name = "zterm"
-version = "0.1.0"
+version = "0.3.0"
 description = "terminal emulator"
-authors = ["Billy <billydevbusiness@gmail.com>, Harsh Narayan Jha <harshnarayanjha@github.com>"]
+authors = [
+    "Billy <billydevbusiness@gmail.com>",
+    "Harsh Narayan Jha <harshnj@icloud.com>",
+]
 license = "MIT"
 readme = "README.md"
 
@@ -11,6 +14,8 @@ python = "^3.10"
 pyqt5 = "^5.15.10"
 pyqt5-qt5 = "=5.15.2"
 PyQt-Fluent-Widgets = "^1.5.2"
+pywinpty = { version = "^2.0.13", platform = "win32" }
+ptyprocess = { version = "^0.7.0", platform = "linux" }
 
 [build-system]
 requires = ["poetry-core"]
