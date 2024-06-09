@@ -78,7 +78,5 @@ class Root(MSFluentWindow):
             terminal : Terminal = tabWidget.widget
             terminal.setGeometry(0, 0, event.size().width(), event.size().height())
             terminal.textedit.resize(event.size())
-            print(event.size())
-            print(terminal.geometry())
             
 
