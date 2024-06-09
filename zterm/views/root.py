@@ -1,6 +1,7 @@
 import uuid
 
 from PyQt5.QtWidgets import QApplication, QStackedWidget
+from PyQt5.QtGui import QResizeEvent
 from qfluentwidgets import FluentIcon as FIF
 from qfluentwidgets import *
 
@@ -67,3 +68,15 @@ class Root(MSFluentWindow):
     def addTab(self, routeKey, text, widget, icon=None):
         self.tabBar.addTab(routeKey, text, icon)
         self.stack.addWidget(ZTermTab(self, routeKey, widget))
+        
+    def resizeEvent(self, event: QResizeEvent) -> None:
+        super().resizeEvent(event)
+
+        if (currentTab := self.tabBar.currentTab()) != None:
+            objectName = currentTab.routeKey()
+            tabWidget = self.findChild(ZTermTab, objectName)
+            terminal : Terminal = tabWidget.widget
+            terminal.setGeometry(0, 0, event.size().width(), event.size().height())
+            terminal.textedit.resize(event.size())
+            
+
