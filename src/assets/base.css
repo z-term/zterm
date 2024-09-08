@@ -5,23 +5,38 @@
     padding: 0px;
 }
 
+html {
+    overflow: hidden;
+    height: 100%;
+}
+
+body {
+    overflow: auto;
+    height: 100%;
+}
+
+body::-webkit-scrollbar {
+    display: none;
+}
+  
+
 .titlebar {
     background-color: #35495e;
     display: flex;
+    height: 40px;
     justify-content: end;
 }
 
 .titlebar .button {
     user-select: none;
     cursor: pointer;
-    display: inline;
-    align-items: center;
     vertical-align: middle;
+    align-items: center;
     justify-content: center;
-    margin: 5px;
 
     span {
         vertical-align: middle;
+        height: 100%;
     }
 }
 
@@ -30,3 +45,4 @@
     color: white;
     font-size: 15px;
 }
+
