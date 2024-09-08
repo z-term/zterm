@@ -1,49 +1,73 @@
-@import 'material-icons/iconfont/material-icons.css';
+@import "material-icons/iconfont/material-icons.css";
 
 * {
-    margin: 0px;
-    padding: 0px;
+  margin: 0px;
+  padding: 0px;
 }
 
 html {
-    overflow: hidden;
-    height: 100%;
+  overflow: hidden;
+  height: 100%;
 }
 
 body {
-    overflow: auto;
-    height: 100%;
+  overflow: auto;
+  height: 100%;
 }
 
 body::-webkit-scrollbar {
-    display: none;
+  display: none;
 }
 
-
 .titlebar {
-    background-color: #35495e;
+  background-color: #35495e;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  .title {
+    margin: 0 0.6em;
     display: flex;
-    height: 40px;
+    align-items: center;
+
+    img {
+      height: 28px;
+    }
+
+    p.app-title {
+      user-select: none;
+      -webkit-user-select: none;
+      color: white;
+      font-size: 1.1rem;
+      font-weight: 800;
+      margin-left: 1em;
+    }
+  }
+
+  .buttons {
+    display: flex;
     justify-content: end;
     align-items: center;
+  }
 }
 
 .titlebar .button {
-    user-select: none;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -webkit-user-drag: none;
-    cursor: pointer;
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -webkit-user-drag: none;
+  cursor: pointer;
 
-    margin-right: 0.3em;
+  margin-right: 0.3em;
 
-    span {
-        height: 100%;
-    }
+  span {
+    height: 100%;
+  }
 }
 
 .material-icons {
-    color: white;
-    font-size: 18px;
-    padding: 0 0.2em;
+  color: white;
+  font-size: 18px;
+  padding: 0 0.2em;
 }
