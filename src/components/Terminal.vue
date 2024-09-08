@@ -2,7 +2,7 @@
 import { Terminal } from "@xterm/xterm";
 import "@xterm/xterm/css/xterm.css";
 
-import { FitAddon } from '@xterm/addon-fit';
+import { FitAddon } from "@xterm/addon-fit";
 import { onMounted } from "vue";
 
 const terminal = new Terminal({
@@ -12,12 +12,12 @@ const terminal = new Terminal({
 const fitAddon = new FitAddon();
 terminal.loadAddon(fitAddon);
 
-const fitTerm = (() => {
+const fitTerm = () => {
   fitAddon.fit();
-});
-  
+};
+
 onMounted(() => {
-  window.addEventListener('resize', fitTerm);
+  window.addEventListener("resize", fitTerm);
 
   terminal.open(document.getElementById("terminal-container")!);
   fitAddon.fit();
@@ -28,13 +28,16 @@ onMounted(() => {
   terminal.write("$ ");
 
   terminal.attachCustomKeyEventHandler((ev) => {
-    // console.log(ev.keyCode);
     if (ev.type === "keydown") {
-      if (ev.keyCode === 13) {
+      if (ev.code === "Enter") {
         terminal.write("\n\r$ ");
         line = "";
-      } else if (ev.keyCode == 8) {
+      } else if (ev.code == "Backspace") {
         terminal.write("\b \b");
+      } else if (ev.ctrlKey) {
+        if (ev.code == "KeyU") {
+          terminal.clear();
+        }
       } else {
         line += ev.key;
         terminal.write(ev.key);
