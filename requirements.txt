@@ -1,4 +1,0 @@
-PyQt5
-PyQt-Fluent-Widgets
-pywinpty; platform_system == "Windows"
-ptyprocess; platform_system != "Windows"
