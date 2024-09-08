@@ -22,6 +22,7 @@ textarea {
   color: white;
   outline: none;
   resize: none;
+  font-size: 1.5rem;
 }
 
 textarea::-webkit-scrollbar {
