@@ -2,14 +2,25 @@
 import { Terminal } from "@xterm/xterm";
 import "@xterm/xterm/css/xterm.css";
 
+import { FitAddon } from '@xterm/addon-fit';
 import { onMounted } from "vue";
 
+const terminal = new Terminal({
+  cursorBlink: "block",
+  fontFamily: "monospace",
+});
+const fitAddon = new FitAddon();
+terminal.loadAddon(fitAddon);
+
+const fitTerm = (() => {
+  fitAddon.fit();
+});
+  
 onMounted(() => {
-  var terminal = new Terminal({
-    cursorBlink: "block",
-    fontFamily: "monospace",
-  });
+  window.addEventListener('resize', fitTerm);
+
   terminal.open(document.getElementById("terminal-container")!);
+  fitAddon.fit();
 
   let line = "";
   terminal.write("Welcome to ZTerm\n\r");
@@ -44,9 +55,14 @@ onMounted(() => {
 <style scoped>
 #terminal-container {
   width: 100%;
-  height: 100%;
+  height: calc(100vh-40px);
   padding: 0.4em;
-  background-color: white;
+  background-color: black;
   color: white;
+  overflow-y: clip;
+}
+
+#terminal-container::-webkit-scrollbar {
+  display: none;
 }
 </style>
