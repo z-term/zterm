@@ -1,0 +1,32 @@
+@import 'material-icons/iconfont/material-icons.css';
+
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+.titlebar {
+    background-color: #35495e;
+    display: flex;
+    justify-content: end;
+}
+
+.titlebar .button {
+    user-select: none;
+    cursor: pointer;
+    display: inline;
+    align-items: center;
+    vertical-align: middle;
+    justify-content: center;
+    margin: 5px;
+
+    span {
+        vertical-align: middle;
+    }
+}
+
+
+.material-icons {
+    color: white;
+    font-size: 15px;
+}

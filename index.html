@@ -3,11 +3,23 @@
   <head>
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Tauri + Vue + Typescript App</title>
+    <title>ZTerm</title>
   </head>
 
   <body>
+    <div data-tauri-drag-region class="titlebar">
+      <div class="button" id="titlebar-minimize" >
+        <span class="material-icons">close_fullscreen</span> 
+      </div>
+      <div class="button" id="titlebar-maximize" >
+        <span class="material-icons">open_in_full</span> 
+      </div>
+      <div class="button" id="titlebar-close" >
+        <span class="material-icons">close</span> 
+      </div>
+    </div>
     <div id="app"></div>
     <script type="module" src="/src/main.ts"></script>
   </body>

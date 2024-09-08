@@ -15,10 +15,22 @@
       "shell": {
         "all": false,
         "open": true
+      },
+      "window": {
+        "all": false,
+        "close": true,
+        "hide": true,
+        "show": true,
+        "maximize": true,
+        "minimize": true,
+        "unmaximize": true,
+        "unminimize": true,
+        "startDragging": true
       }
     },
     "windows": [
       {
+        "decorations": false,
         "title": "zterm",
         "width": 800,
         "height": 600
