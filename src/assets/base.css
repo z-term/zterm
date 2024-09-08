@@ -18,31 +18,32 @@ body {
 body::-webkit-scrollbar {
     display: none;
 }
-  
+
 
 .titlebar {
     background-color: #35495e;
     display: flex;
     height: 40px;
     justify-content: end;
+    align-items: center;
 }
 
 .titlebar .button {
     user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -webkit-user-drag: none;
     cursor: pointer;
-    vertical-align: middle;
-    align-items: center;
-    justify-content: center;
+
+    margin-right: 0.3em;
 
     span {
-        vertical-align: middle;
         height: 100%;
     }
 }
 
-
 .material-icons {
     color: white;
-    font-size: 15px;
+    font-size: 18px;
+    padding: 0 0.2em;
 }
-
