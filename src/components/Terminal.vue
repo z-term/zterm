@@ -23,8 +23,7 @@ onMounted(() => {
   fitAddon.fit();
 
   let line = "";
-  terminal.write("Welcome to ZTerm\n\r");
-  terminal.write("Hello from \x1B[1;3;31mxterm.js\x1B[0m\n\r");
+  terminal.write("Welcome to \x1B[1;3;31mZTerm\x1B[0m\n\r");
   terminal.write("$ ");
 
   terminal.attachCustomKeyEventHandler((ev) => {
